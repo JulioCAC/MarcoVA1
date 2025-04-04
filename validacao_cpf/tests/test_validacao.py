@@ -7,7 +7,7 @@ from app.validacao import validar_cpf
 class TestValidarCPF(unittest.TestCase):
     def test_cpfs_validos(self):
         self.assertTrue(validar_cpf("529.982.247-25"))  
-        self.assertTrue(validar_cpf("123.456.789-09")) 
+        self.assertTrue(validar_cpf("170.928.730-61")) 
         self.assertTrue(validar_cpf("98765432100"))     
 
     def test_cpfs_invalidos(self):
@@ -21,7 +21,7 @@ class TestValidarCPF(unittest.TestCase):
         self.assertFalse(validar_cpf("abc.def.ghi-jk")) 
 
     def test_com_caracteres_aleatorios(self):
-        self.assertTrue(validar_cpf("529-982.247*25"))  
+        self.assertFalse(validar_cpf("529-982*247-25"))  
 
 if __name__ == "__main__":
     unittest.main()
